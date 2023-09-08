@@ -1,24 +1,15 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// ==UserScript==
+// @name         twitter-follow-switch.js
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Switch user profiles when follow people on twitter
+// @author       byhow
+// @match        https:/twitter.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=www.twitter.com
+// @grant        none
+// @license      MIT
+// ==/UserScript==
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector('#counter'))
+const filterDropdownTitleElement = document.querySelector(
+  "#btnFlagFilter_Options .title"
+);
